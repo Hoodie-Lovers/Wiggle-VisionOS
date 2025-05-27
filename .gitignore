@@ -1,62 +1,83 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+############################
+# macOS 시스템-레벨 파일
+############################
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
 
-## User settings
+############################
+# Xcode / 빌드 산출물
+############################
+# 빌드 결과·파생 데이터
+build/
+DerivedData/
+*.xcresult
+
+# 사용자별 프로젝트 설정
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
 xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
 
-## Obj-C/Swift specific
-*.hmap
+############################
+# Swift Package Manager
+############################
+.swiftpm/
+.build/
+Package.resolved            # 잠금 파일을 공유하지 않을 경우
 
-## App packaging
-*.ipa
-*.dSYM.zip
-*.dSYM
-
-## Playgrounds
+############################
+# Swift Playgrounds
+############################
 timeline.xctimeline
 playground.xcworkspace
 
-# Swift Package Manager
-#
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-# *.xcodeproj
-#
-# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
-# hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
-
-.build/
-
+############################
 # CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
-#
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+############################
+Pods/
 
+############################
 # Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
+############################
 Carthage/Build/
+Carthage/Checkouts/
 
+############################
 # fastlane
-#
-# It is recommended to not store the screenshots in the git repo.
-# Instead, use fastlane to re-generate the screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
+############################
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+############################
+# VisionOS / RealityKit / Reality Composer Pro
+############################
+# 개인-기기 의존 메타데이터 → 커밋 불필요
+**/*.realitycomposerpro/WorkspaceData/
+# RC Pro가 생성하는 임시 캐시
+**/*.realitycomposerpro/DerivedData/
+# RealityKit 컴파일 중간 산출물
+*.realityasset/
+*.rcproject/WorkspaceData/
+
+############################
+# 기타 편의 항목
+############################
+*.log
+*.tmp
+*.lock
+*.swp
+.idea/
